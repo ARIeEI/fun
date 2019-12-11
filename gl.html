@@ -4,201 +4,86 @@
         <meta charset="utf-8"/>
         <link rel="stylesheet" href="css/gl.css"/>
     </head>
-    <body><!--
-       <section>
-           <svg>
-               <polyline points="350,100 150,100 150,350 400,350 400,200" fill="none" stroke="red"/>
-               <polygon points="170,310 200,260 350,150 378,190 220,300" fill="none"/>
-           </svg>
-       </section>
-       
-       <section>
-           <svg>
-               <circle  class="anim" r="40" cx="250" cy="150" fill="greenyellow" fill-opacity=".5"/>
-           </svg>
-       </section>
-       <div>
-       <script>
-     for( var i=1; i<=100; i++){
-              var a= i % 5==0;
-              var b = i % 7==0;
-              
-              if( i%5==0 && i%7!=0){
-                  document.write('<span style="color:salmon">'+i+'</span>');
-                 
-              }else if(i%5!=0 && i%7==0){
-                       document.write('<span style="color:yellow">'+i+'</span>');
-                  
-              }else if( a && b ){
-                  document.write('<span style="color:blue">'+i+'</span>');
-              }else {
-                  document.write(i);
-
-              }
-              
-              
-          }
-           
-           
-           for(var i=1; i<=100; i++){
-               var a = i % 5==0;
-               var b = i % 7==0;
-               if( i%5==0 && i%7!=0){
-                   document.write('<span style="color:red">'+i+'</span>');
-               }else if(i%5 !=0 && i%7==0){
-                   document.write('<span style="color:blue">'+i+'</span>');
-               }else if(a && b){
-                   document.write('<span style="color:gold">'+i+'</span>');
-               }else{
-                   document.write(i);
-               }
-               
-               
-           }
-          
-           document.write('<br>');
-           
-          for(var i=1; i<10; i++){
-              sum=2*i;
-              
-              document.write('2X'+i+'='+sum);
-              document.write('<br>');
-          }
-        
-           for(var i=2; i<=10; i++){
-               for(var a=1; a<=9; a++){
-                   sum=i*a;
-                document.write(i+'*'+a+'='+sum);
-                   document.write('__');
-                
-               }
-               document.write('<br>');
-           }
-        </script>
-   
-   </div>
-       
-        <input type="button" value="day" onclick="
-            document.querySelector('body').style.color='white';
-            document.querySelector('body').style.backgroundColor='black';
-        "/>
-        
-        <input type="button" value="night" onclick="
-            document.querySelector('body').style.color='black';
-            document.querySelector('body').style.backgroundColor='white';
-        "/>
-        <input type="button" value="night" id="day" onclick="
-           
-            if(document.querySelector('#day').value == 'night'){
-             document.querySelector('body').style.color='white'; document.querySelector('body').style.backgroundColor='black';
-             document.querySelector('#day').value='day';
-            }else{
-              document.querySelector('body').style.color='black'; document.querySelector('body').style.backgroundColor='white';
-             document.querySelector('#day').value='night';
-            
-            
-            }
-            
-        "/>
-        -->
-        
+    <body>
         <section>
-		<h2>파도 그리기</h2>
-		<svg>
-            
-          <!--  sky-->
-            <defs>
-                <linearGradient id="sunset" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" style="stop-color:#C0F6DC;"/>
-                <stop offset="35%" style="stop-color:#B6FADB;stop-opacity:.;"/>
-                <stop offset="60%" style="stop-color:#1C2159;"/>
-                <stop offset="100%" style="stop-color:#4B1850;"/>
-                </linearGradient>
-            </defs>
-            <g class="sky">
-            <circle  fill="url(#sunset)"
-            r="600" cx="300" cy="200"/>
-            
-             <!--sun-->
-            <circle r="20" cx="330" cy="50" fill="#FAF58C" opacity=".3"/>
-            <circle r="14" cx="330" cy="50" fill="#FAF58C" opacity=".5"/>
-            <circle r="10" cx="330" cy="50" fill="yellow"/>
-            
-            <!--moon-->
-            <path class="moon" d="M400,320 A21,21 0,0,1 430,350"/>
-            <path d="M399,320 A60,38 -45,0,1 429,350" fill="#1C2159"/>
-            
-            <!-- <path class="moon" d="M400,320 A15,15 0,0,1 421,342"/>
-            <path d="M399,320 A40,45 0,0,1 432,354" fill="#1C2159"/>-->
-            <circle class="moon" r="2" cx="50" cy="384"/>
-            <circle class="moon m" r="1" cx="80" cy="329"/>
-            <circle class="moon" r="2" cx="120" cy="310"/>
-            <circle class="moon m" r="1" cx="250" cy="385"/>
-            <circle class="moon m" r="2" cx="300" cy="350"/>
-            <circle class="moon" r="2" cx="400" cy="370"/>
-            <circle class="moon" r="2" cx="500" cy="345"/>
-            <circle class="moon m" r="2" cx="530" cy="380"/>
-            <circle class="moon m" r="1" cx="550" cy="320"/>
-            <circle class="moon m" r="2" cx="580" cy="395"/>
-            
-            
-            
-            
-            </g>
-            
-            <path class="cloud" d="M0,100 C50,60 100,60 150,100 S200,180 350,90 S430 130 700,150 L0,150 Z" />
-            
-            <!--sea-->
-            <rect width="600" height="250" y="150" fill="#8ec5fc" /> 
-            
-            <path id="sea" d="M0,150 Q200,190 350,170 T600,142 Q730,145 850,170 c100,20 120,10 200,5 s200,-70 350,0 l0,350 L0,400" fill="url(#fishC)"/><!--750#98EBDC-->
-            
-            <!--sand-->
-            <path d="M0,320 C50,300 100,300 200,320 S350,320 400,320 C500,290 550,290 700,300 L600,400 0,400Z" fill="#E6B36D"/>
-            
-            
-            <!--fish-->
-            <symbol id="wheel">
-            <path class="fish" d="M500,300 C450,200 380,200 300,300 S230,280 200,290 C215,330 215,340 190,380 C210,370 210,370 220,360 C240,350 250,350 300,370 S450,390 500,300" fill="url(#fishP)"/>
-            <path class="fish" d="M245,355 C240,355 250,350 300,370 S450,390 500,300 Q400,350 240,355" fill="#8EE1D2"/>
-            <path class="fish" d="M420,330 c-8,35 -15,44 -65,45 c20,-15 25,-20 28,-36" fill="url(#fishP)" />
-           <circle r="5" cx="450" cy="290" />
-            <circle r="3" cx="400" cy="220" fill="white"/>
-            <circle r="3" cx="400" cy="205" fill="white"/>
-            <circle r="3" cx="410" cy="190" fill="white"/>
-            <circle r="3" cx="422" cy="180" fill="white"/>
-            <circle r="3" cx="436" cy="180" fill="white"/>
-            <circle r="3" cx="450" cy="190" fill="white"/>
-            <circle r="3" cx="390" cy="190" fill="white"/>
-            <circle r="3" cx="378" cy="180" fill="white"/>
-            <circle r="3" cx="363" cy="180" fill="white"/>
-            <circle r="3" cx="350" cy="190" fill="white"/>
-            </symbol>
-            <use xlink:href="#wheel" y="-40"/>
-            <use xlink:href="#wheel" x="-200"/>
-            <defs>
-                <linearGradient id="fishC" x1="0" y1="40%" x2="100%" y2="70%">
-                    <stop offset="0" style="stop-color:#30cfd0;"/>
-                    <stop offset="50%" style="stop-color:#330867;"/>
-                    <stop offset="75%" style="stop-color:#330867;"/>
-                    <stop offset="100%" style="stop-color:#BA55D3;"/>
-                </linearGradient>
-            </defs>
-            <defs>
-                <linearGradient id="fishP" x1="0%" y1="80%" x2="100%" y2="20%">
-                    <stop offset="0" style="stop-color:#a18cd1;"/>
-                    <stop offset="100%" style="stop-color:#fbc2eb;"/>
-                </linearGradient>
+            <svg>
+                <!--  sky-->
+                <defs>
+                    <linearGradient id="sunset" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:#C0F6DC;"/>
+                    <stop offset="35%" style="stop-color:#B6FADB;stop-opacity:.;"/>
+                    <stop offset="60%" style="stop-color:#1C2159;"/>
+                    <stop offset="100%" style="stop-color:#4B1850;"/>
+                    </linearGradient>
+                </defs>
+                <g class="sky">
+                    <circle  fill="url(#sunset)"
+                    r="600" cx="300" cy="200"/>
+                    
+                    <!--sun-->
+                    <circle r="20" cx="330" cy="50" fill="#FAF58C" opacity=".3"/>
+                    <circle r="14" cx="330" cy="50" fill="#FAF58C" opacity=".5"/>
+                    <circle r="10" cx="330" cy="50" fill="yellow"/>
+                    
+                    <!--moon-->
+                    <path class="moon" d="M400,320 A21,21 0,0,1 430,350"/>
+                    <path d="M399,320 A60,38 -45,0,1 429,350" fill="#1C2159"/>
+                    <circle class="moon" r="2" cx="50" cy="384"/>
+                    <circle class="moon m" r="1" cx="80" cy="329"/>
+                    <circle class="moon" r="2" cx="120" cy="310"/>
+                    <circle class="moon m" r="1" cx="250" cy="385"/>
+                    <circle class="moon m" r="2" cx="300" cy="350"/>
+                    <circle class="moon" r="2" cx="400" cy="370"/>
+                    <circle class="moon" r="2" cx="500" cy="345"/>
+                    <circle class="moon m" r="2" cx="530" cy="380"/>
+                    <circle class="moon m" r="1" cx="550" cy="320"/>
+                    <circle class="moon m" r="2" cx="580" cy="395"/>
+                </g>
+                <path class="cloud" d="M0,100 C50,60 100,60 150,100 S200,180 350,90 S430 130 700,150 L0,150 Z" />
+
+                <!--sea-->
+                <rect width="600" height="250" y="150" fill="#8ec5fc" /> 
+                <path id="sea" d="M0,150 Q200,190 350,170 T600,142 Q730,145 850,170 c100,20 120,10 200,5 s200,-70 350,0 l0,350 L0,400" fill="url(#fishC)"/><!--750#98EBDC-->
+
+                <!--sand-->
+                <path d="M0,320 C50,300 100,300 200,320 S350,320 400,320 C500,290 550,290 700,300 L600,400 0,400Z" fill="#E6B36D"/>
                 
-            </defs>
-           <path d="M100,240 C110,270 130,270 160,250 S170,250 200,270 C195,260 185,250 200,215 C190,220 190,220 175,235 C140,210 120,210 100,240" fill="midnightblue" />
-            <circle r="2" cx="115" cy="235" fill="yellow"/>
-           
-           
-          
-				<!-- 과제 : 예쁜 파도 위에 예쁜 물고기 
-			-->
-		</svg>
-	</section>
+                <!--fish-->
+                <symbol id="wheel">
+                    <path class="fish" d="M500,300 C450,200 380,200 300,300 S230,280 200,290 C215,330 215,340 190,380 C210,370 210,370 220,360 C240,350 250,350 300,370 S450,390 500,300" fill="url(#fishP)"/>
+                    <path class="fish" d="M245,355 C240,355 250,350 300,370 S450,390 500,300 Q400,350 240,355" fill="#8EE1D2"/>
+                    <path class="fish" d="M420,330 c-8,35 -15,44 -65,45 c20,-15 25,-20 28,-36" fill="url(#fishP)" />
+                    <circle r="5" cx="450" cy="290" />
+                    <circle r="3" cx="400" cy="220" fill="white"/>
+                    <circle r="3" cx="400" cy="205" fill="white"/>
+                    <circle r="3" cx="410" cy="190" fill="white"/>
+                    <circle r="3" cx="422" cy="180" fill="white"/>
+                    <circle r="3" cx="436" cy="180" fill="white"/>
+                    <circle r="3" cx="450" cy="190" fill="white"/>
+                    <circle r="3" cx="390" cy="190" fill="white"/>
+                    <circle r="3" cx="378" cy="180" fill="white"/>
+                    <circle r="3" cx="363" cy="180" fill="white"/>
+                    <circle r="3" cx="350" cy="190" fill="white"/>
+                </symbol>
+                <use xlink:href="#wheel" y="-40"/>
+                <use xlink:href="#wheel" x="-200"/>
+                <defs>
+                    <linearGradient id="fishC" x1="0" y1="40%" x2="100%" y2="70%">
+                        <stop offset="0" style="stop-color:#30cfd0;"/>
+                        <stop offset="50%" style="stop-color:#330867;"/>
+                        <stop offset="75%" style="stop-color:#330867;"/>
+                        <stop offset="100%" style="stop-color:#BA55D3;"/>
+                    </linearGradient>
+                </defs>
+                <defs>
+                    <linearGradient id="fishP" x1="0%" y1="80%" x2="100%" y2="20%">
+                        <stop offset="0" style="stop-color:#a18cd1;"/>
+                        <stop offset="100%" style="stop-color:#fbc2eb;"/>
+                    </linearGradient>
+                </defs>
+                <path d="M100,240 C110,270 130,270 160,250 S170,250 200,270 C195,260 185,250 200,215 C190,220 190,220 175,235 C140,210 120,210 100,240" fill="midnightblue" />
+                <circle r="2" cx="115" cy="235" fill="yellow"/>
+            </svg>
+        </section>
     </body>
 </html>

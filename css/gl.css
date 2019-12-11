@@ -1,211 +1,24 @@
 @charset "utf-8";
-
 svg{
-    width:600px; height:400px;
-    box-shadow: 0 0 10px 1px #ccc;
-    -webkit-box-shadow: 0 0 10px 1px #ccc;
-    background:url(../img/grid.gif);
+    margin: 10% auto 0;
+    width:600px;
+    height:400px;
+    transform:scale(2);
 }
-
 body{
     text-align:center;
 }
-
-polygon{
-    stroke:hotpink;
-}
-
-@keyframes anim{
-    0%{
-        transform:translateY(0);
-        -webkit-transform:translateY(0);
-        -ms-transform:translateY(0);
-    }
-    
-    25%{
-        transform:translateY(200px);
-        -webkit-transform:translateY(200px);
-        -ms-transform:translateY(200px);
-    }
-    
-    
-    50%{
-        transform:translateY(0);
-        -webkit-transform:translateY(0);
-        -ms-transform:translateY(0);
-    }
-    
-    75%{
-        transform:translateX(100px);
-        -webkit-transform:translateX(100px);
-        -ms-transform:translateX(100px);
-    }
-    
-    100%{
-        transform:translateX(0);
-        -webkit-transform:translateX(0);
-        -ms-transform:translateX(0);
-    }
-    
-}
-
-
-@-webkit-keyframes anim{
-    0%{
-        transform:translateY(0);
-        -webkit-transform:translateY(0);
-        -ms-transform:translateY(0);
-    }
-    
-    25%{
-        transform:translateY(200px);
-        -webkit-transform:translateY(200px);
-        -ms-transform:translateY(200px);
-    }
-    
-    
-    50%{
-        transform:translateY(0);
-        -webkit-transform:translateY(0);
-        -ms-transform:translateY(0);
-    }
-    
-    75%{
-        transform:translateX(100px);
-        -webkit-transform:translateX(100px);
-        -ms-transform:translateX(100px);
-    }
-    
-    100%{
-        transform:translateX(0);
-        -webkit-transform:translateX(0);
-        -ms-transform:translateX(0);
-    }
-    
-}
-
-
-@-moz-keyframes anim{
-    0%{
-        transform:translateY(0);
-        -webkit-transform:translateY(0);
-        -ms-transform:translateY(0);
-    }
-    
-    25%{
-        transform:translateY(200px);
-        -webkit-transform:translateY(200px);
-        -ms-transform:translateY(200px);
-    }
-    
-    
-    50%{
-        transform:translateY(0);
-        -webkit-transform:translateY(0);
-        -ms-transform:translateY(0);
-    }
-    
-    75%{
-        transform:translateX(100px);
-        -webkit-transform:translateX(100px);
-        -ms-transform:translateX(100px);
-    }
-    
-    100%{
-        transform:translateX(0);
-        -webkit-transform:translateX(0);
-        -ms-transform:translateX(0);
-    }
-    
-}
-
-
-@-ms-keyframes anim{
-    0%{
-        transform:translateY(0);
-        -webkit-transform:translateY(0);
-        -ms-transform:translateY(0);
-    }
-    
-    25%{
-        transform:translateY(200px);
-        -webkit-transform:translateY(200px);
-        -ms-transform:translateY(200px);
-    }
-    
-    
-    50%{
-        transform:translateY(0);
-        -webkit-transform:translateY(0);
-        -ms-transform:translateY(0);
-    }
-    
-    75%{
-        transform:translateX(100px);
-        -webkit-transform:translateX(100px);
-        -ms-transform:translateX(100px);
-    }
-    
-    100%{
-        transform:translateX(0);
-        -webkit-transform:translateX(0);
-        -ms-transform:translateX(0);
-    }
-    
-}
-
-
-@-o-keyframes anim{
-    0%{
-        transform:translateY(0);
-        -webkit-transform:translateY(0);
-        -ms-transform:translateY(0);
-    }
-    
-    25%{
-        transform:translateY(200px);
-        -webkit-transform:translateY(200px);
-        -ms-transform:translateY(200px);
-    }
-    
-    
-    50%{
-        transform:translateY(0);
-        -webkit-transform:translateY(0);
-        -ms-transform:translateY(0);
-    }
-    
-    75%{
-        transform:translateX(100px);
-        -webkit-transform:translateX(100px);
-        -ms-transform:translateX(100px);
-    }
-    
-    100%{
-        transform:translateX(0);
-        -webkit-transform:translateX(0);
-        -ms-transform:translateX(0);
-    }
-    
-}
-
-.anim{
-    animation: anim 5s ease-in-out infinite;
-}
-
 .sky{
     animation: sunset 7s ease-in-out infinite;
-	        transform-origin: 50% 50% ;
+    transform-origin: 50% 50% ;
 }
 #sea{
     animation: sea 7s ease-in-out infinite;
 }
-
 .cloud{
     fill:#646464;
     fill-opacity:.5;
 }
-
 .moon{
     fill:yellow;
 }
