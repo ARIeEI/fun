@@ -3,7 +3,6 @@ SVG를 이용하여 고래 가족이란 주제로 이미지를 만들었습니�
 낮과 밤이 바뀌는 것, 파도가 움직이는 것 등을 표현하여, 고래가족의 바다속 모습을 표현하고자 하였습니다.
 
 - SVG animation
-- image slide
 
 # Specification
 
